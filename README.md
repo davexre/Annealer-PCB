@@ -143,6 +143,7 @@
  ### I2C
  
  _**SEE NOTE ABOVE ABOUT PIN CONFLICTS WITH I2C AND OTHER DEVICES**_
+ 
  The I2C connector breaks out GND on pin 1, VCC (selectable 3.3V or 5V) on pin 2, SDA on pin 3, and SCL on pin 4, similar
  to the pin order found on common I2C LCDs. This gives you a way to connect any I2C device to your board. Between this and
  the Multipurpose connector, you can easily implement an LCD and clickable encoder for input and display. 
