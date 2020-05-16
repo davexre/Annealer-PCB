@@ -23,7 +23,16 @@
  - Two auxiliary headers (signal pin and ground, could be used for a variety of control purposes)
  - Multipurpose header (3 signals and ground, can hook up an encoder with button, or any other use)
  - Two LEDs for troubleshooting and confirmation of code
+ - I2C connector to add an LCD or other I2C based device
  - Reset button
+ 
+ ## IMPORTANT NOTE
+ 
+ If you use the I2C connector, be aware that you cannot use Proximity sensor 2 or Thermistor 2 on some boards (like
+ the Arduino Uno). Any board that ties SDA and SCL pins to A4/A5 will encounter this issue. I recommend that you pick the
+ functions you wish to use, and only install connectors or headers for those functions (ie, only install the I2C connector
+ **or** the Proximity 2 and Thermistor 2 connectors!
+ 
  
  ## Example Implementation
  My code for implementation is here: https://github.com/davexre/Annealer-Control - note that I don't make use of 
@@ -78,7 +87,7 @@
  voltage for your sensor. 
  
  ### Thermistors
- Input to pins A2 and A3, respectively.
+ Input to pins A2 and A4, respectively. _**SEE NOTE ABOVE ABOUT I2C**_
  
  These are basic 10K nominal thermistors. They're generally used by wiring them in a voltage divider configuration with a
  10k resistor, and determining the resistance of the thermistor at the current temperature, and then cross referencing that
@@ -99,7 +108,7 @@
  
  
  ### Proximity Sensors
- Input to pins A4 and A5, respectively.
+ Input to pins A3 and A5, respectively. _**SEE NOTE ABOVE ABOUT I2C**_
  
  J3 and J10 are both 4 pin jumpers that are intended to feed either IR proximity sensors (which are an IR LED and
  photodetector in a single package) or IR LED/detector pairs. Pins 1 & 2 act as a pair for the detector. These are generally
@@ -131,4 +140,14 @@
  with an encoder knob and click switch. 
  
  
- ### More to come
+ ### I2C
+ 
+ _**SEE NOTE ABOVE ABOUT PIN CONFLICTS WITH I2C AND OTHER DEVICES**_
+ The I2C connector breaks out GND on pin 1, VCC (selectable 3.3V or 5V) on pin 2, SDA on pin 3, and SCL on pin 4, similar
+ to the pin order found on common I2C LCDs. This gives you a way to connect any I2C device to your board. Between this and
+ the Multipurpose connector, you can easily implement an LCD and clickable encoder for input and display. 
+ 
+ There's a solderable jumper for voltage selection. It defaults to 3.3v, with 5V selectable on the other side of the jumper.
+ Obviously, use the correct voltage for your device(s)!
+ 
+ 
