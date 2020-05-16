@@ -26,7 +26,8 @@
  - Reset button
  
  ## Example Implementation
- My code for implementation is here: https://github.com/davexre/Annealer-Control
+ My code for implementation is here: https://github.com/davexre/Annealer-Control - note that I don't make use of 
+ all of the features on this board at this time! 
  
  ## Configuration
  The board was originally designed with [SparkFun's](https://www.sparkfun.com/) [RedBoard Artemis](https://www.sparkfun.com/products/15444)
@@ -52,5 +53,82 @@
  uses a [Bourns 3296W](https://www.bourns.com/pdfs/3296.pdf) trimpot, which is available in resistances up to 2Mohm.
  A 200kOhm trimpot could be used (instead of the spec'ed 20kOhm trimpot) in conjunction with the specified 10kOhm resistor
  to bring 48v in line with the ADC. But... I prefer to keep higher voltage off the shield, thus the voltage brick. 
+ 
+ To tune the voltage divider after assembly, attach 5v to pin 1 at connector J1. Measure the voltage between A0 and GND.
+ Tune trimpot VR1 until you measure 2.5v, indicating that the voltage divider network is dividing voltage by 2 exactly. 
+ 
+ ### Current
+ Input to pin A1.
+ 
+ The current sensor circuit expects to receive the output from something like a Hall effect sensor, such as the [Gravity
+ 20A Current Sensor](https://www.dfrobot.com/product-1570.html) made by DF Robot. The pinout on J2 expects to power a 
+ device, so pin 1 is 5V supply. Pin 2 is ground. Pin 3 is the return from the [ACS712 Hall effect sensor IC](http://www.allegromicro.com/~/media/Files/Datasheets/ACS712-Datasheet.ashx?la=en). The sensor returns 
+ 1/2 of the supply voltage at 0A (and can signal +/- 20A). At +20A, it returns 4.5v. 
+ 
+ If you have a 5v board, you can safely bypass the voltage divider network by cutting the CUR-BYPASS jumper and soldering
+ the other side closed. 
+ 
+ For other boards, the voltage divider can be tuned to pull the max input value down to match the ADC reference voltage.
+ Divide your reference voltage by 4.5 to get the scale factor, and then multiply by 5 to get a target voltage. For instance, 
+ for the Artemis, 2/4.5 = .444. Multiply by 5v to get a target of 2.222 volts. For 3.3V reference, your target is 3.667.
+ Attach 5v to pin 1 on J2, and then measure voltage between A1 and GND. Tune trimpot VR2 until you reach the target voltage. 
+ 
+ For using sensors other than the Gravity sensor block lined above, you can use this circuit as needed. Changing the jumper
+ setting links pin 3 on J2 to A1 directly, or you can simply use the voltage divider network to configure the correct input
+ voltage for your sensor. 
+ 
+ ### Thermistors
+ Input to pins A2 and A3, respectively.
+ 
+ These are basic 10K nominal thermistors. They're generally used by wiring them in a voltage divider configuration with a
+ 10k resistor, and determining the resistance of the thermistor at the current temperature, and then cross referencing that
+ to a table, or using a Steinhart style equation to arrive at the actual temperature. One example of [this kind of thermistor](https://www.adafruit.com/product/372_)
+ is sold by Adafruit. 
+ 
+ In order to get an accurate reading, you need to power the thermistor's voltage divider with your reference voltage.
+ That's easy, if you have a 3.3v or 5v ADC reference. If you have an Artemis, though, you need to supply the thermistors
+ with 2v. So, we do that with another voltage divider. By default, the board divides 3.3v down to 2v for the source voltage.
+ To set this up, feed 3.3v into the 3.3v pin on the shield. Then probe the middle pad of the THERM_DIV jumper and GND.
+ Adjust VR3 until you reach 2v.
+ 
+ To configure for 3.3v reference, cut the THERM_DIV jumper and solder the other side. This connects the 3.3v supply straight
+ both thermistor voltage dividers. 
+ 
+ To configure for 5v, cut both the THERM_SRC and THERM_DIV jumpers and resolder the opposite sides. This connects the 5v
+ supply straight to both thermistor voltage dividers. 
+ 
+ 
+ ### Proximity Sensors
+ Input to pins A4 and A5, respectively.
+ 
+ J3 and J10 are both 4 pin jumpers that are intended to feed either IR proximity sensors (which are an IR LED and
+ photodetector in a single package) or IR LED/detector pairs. Pins 1 & 2 act as a pair for the detector. These are generally
+ measured across a voltage divider, so a 10k resistor is specified for that purpose. If your detector requires a different
+ resistor value, substitute as required.
+ 
+ Pins 3 & 4 are intended to power the LED. They supply 5v to the LED and incorporate a 330 ohm current limiting resistor.
+ Again, if your device requires something different, substitute those resistors as required.
+ 
+ If you need access to analog pins without a voltage divider in place, you could also leave out R3 or R10, and pin 1 will
+ connect directly to A4 or A5. 
+ 
+ ### Start/Stop buttons, relays, AUX, and Multipurpose connectors
+ 
+ Each of these connectors provides direct access to one or more digital pins. You can use these for input or output as
+ required. The example implementation uses the start/stop buttons, and the relays, currently. 
+ 
+ J8 is a 4 pin connector with pins 2 & 4 connected to GND. Pin 1 connects to D6, and Pin 3 connects to D7. The intention
+ here is to connect each pair to a basic momentary switch/button and use them for control over the anneal cycle. You likely
+ want to use the INPUT_PULLUP option on the pin configuration, or implement your own pullup or pulldown resistor for each
+ pin. 
+ 
+ J6, J7, J9, and J11 are all two pin connectors. Pin 2 on each connects to GND. Pin 1 connects as follows: J6 - D4, J7 - D5,
+ J9 - D2, J11 - D3. The example uses J6 and J7 to operate the inductor board SSR, and the trapdoor solenoid SSR, 
+ respectively.
+ 
+ The Multipurpose connector provides access to 3 additional digital pins (D10 on pin 1, D11 on pin 2, D12 on pin3), with
+ the fourth pin connecting to GND. This could be used for any purpose required, but one common purpose might be to interface
+ with an encoder knob and click switch. 
+ 
  
  ### More to come
