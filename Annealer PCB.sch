@@ -5832,6 +5832,9 @@ Shield form compatible with the Arduino Uno R3.
 <part name="GND9" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="J12" library="SparkFun-Connectors" deviceset="CONN_04" device="POLAR"/>
 <part name="GND10" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="J13" library="SparkFun-Connectors" deviceset="CONN_04" device="POLAR"/>
+<part name="GND17" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="LCDVCC" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_3_1-NC_TRACE" device="_SILK" package3d_urn="urn:adsk.eagle:package:39288/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -5925,6 +5928,16 @@ Shield form compatible with the Arduino Uno R3.
 <attribute name="NAME" x="-45.212" y="132.334" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="-44.45" y="86.106" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
+<instance part="J13" gate="J1" x="-45.72" y="-5.08" smashed="yes" rot="R90">
+<attribute name="VALUE" x="-38.354" y="-10.16" size="1.778" layer="96" font="vector" rot="R90"/>
+<attribute name="NAME" x="-53.848" y="-10.16" size="1.778" layer="95" font="vector" rot="R90"/>
+</instance>
+<instance part="GND17" gate="1" x="-35.56" y="7.62" smashed="yes" rot="R90">
+<attribute name="VALUE" x="-35.306" y="7.62" size="1.778" layer="96" rot="R270" align="top-center"/>
+</instance>
+<instance part="LCDVCC" gate="G$1" x="-45.72" y="27.94" smashed="yes" rot="R90">
+<attribute name="NAME" x="-43.561" y="22.86" size="1.778" layer="95" font="vector"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5989,12 +6002,23 @@ Shield form compatible with the Arduino Uno R3.
 <wire x1="187.96" y1="71.12" x2="182.88" y2="71.12" width="0.1524" layer="91"/>
 <junction x="182.88" y="71.12"/>
 </segment>
+<segment>
+<pinref part="J13" gate="J1" pin="1"/>
+<wire x1="-43.18" y1="0" x2="-43.18" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+<wire x1="-43.18" y1="7.62" x2="-38.1" y2="7.62" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
 <wire x1="-48.26" y1="99.06" x2="-63.5" y2="99.06" width="0.1524" layer="91"/>
 <label x="-63.5" y="99.06" size="1.778" layer="95"/>
 <pinref part="B2" gate="G$1" pin="3.3V"/>
+</segment>
+<segment>
+<pinref part="LCDVCC" gate="G$1" pin="3"/>
+<wire x1="-40.64" y1="27.94" x2="-35.56" y2="27.94" width="0.1524" layer="91"/>
+<label x="-35.56" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -6029,6 +6053,11 @@ Shield form compatible with the Arduino Uno R3.
 <wire x1="180.34" y1="93.98" x2="190.5" y2="93.98" width="0.1524" layer="91"/>
 <junction x="190.5" y="93.98"/>
 <label x="193.04" y="109.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="LCDVCC" gate="G$1" pin="1"/>
+<wire x1="-50.8" y1="27.94" x2="-55.88" y2="27.94" width="0.1524" layer="91"/>
+<label x="-55.88" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -6255,6 +6284,38 @@ Shield form compatible with the Arduino Uno R3.
 <pinref part="B2" gate="G$1" pin="D12"/>
 <wire x1="-22.86" y1="96.52" x2="-20.32" y2="96.52" width="0.1524" layer="91"/>
 <label x="-20.32" y="96.52" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SDA" class="0">
+<segment>
+<pinref part="B2" gate="G$1" pin="SDA"/>
+<wire x1="-22.86" y1="91.44" x2="-20.32" y2="91.44" width="0.1524" layer="91"/>
+<label x="-20.32" y="91.44" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J13" gate="J1" pin="3"/>
+<wire x1="-48.26" y1="0" x2="-48.26" y2="17.78" width="0.1524" layer="91"/>
+<label x="-48.26" y="17.78" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCL" class="0">
+<segment>
+<pinref part="B2" gate="G$1" pin="SCL"/>
+<wire x1="-22.86" y1="88.9" x2="-20.32" y2="88.9" width="0.1524" layer="91"/>
+<label x="-20.32" y="88.9" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J13" gate="J1" pin="4"/>
+<wire x1="-50.8" y1="0" x2="-53.34" y2="0" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="0" x2="-53.34" y2="17.78" width="0.1524" layer="91"/>
+<label x="-53.34" y="17.78" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="J13" gate="J1" pin="2"/>
+<pinref part="LCDVCC" gate="G$1" pin="2"/>
+<wire x1="-45.72" y1="0" x2="-45.72" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
