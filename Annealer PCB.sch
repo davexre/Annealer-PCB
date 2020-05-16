@@ -6195,6 +6195,15 @@ Shield form compatible with the Arduino Uno R3.
 <label x="-55.88" y="121.92" size="1.778" layer="95"/>
 <pinref part="B2" gate="G$1" pin="A3"/>
 </segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="1"/>
+<pinref part="J3" gate="J1" pin="1"/>
+<wire x1="139.7" y1="76.2" x2="139.7" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="71.12" x2="139.7" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="71.12" x2="149.86" y2="71.12" width="0.1524" layer="91"/>
+<junction x="139.7" y="71.12"/>
+<label x="149.86" y="71.12" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -6236,15 +6245,6 @@ Shield form compatible with the Arduino Uno R3.
 </segment>
 </net>
 <net name="A4" class="0">
-<segment>
-<pinref part="R4" gate="G$1" pin="1"/>
-<pinref part="J3" gate="J1" pin="1"/>
-<wire x1="139.7" y1="76.2" x2="139.7" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="71.12" x2="139.7" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="71.12" x2="149.86" y2="71.12" width="0.1524" layer="91"/>
-<junction x="139.7" y="71.12"/>
-<label x="149.86" y="71.12" size="1.778" layer="95"/>
-</segment>
 <segment>
 <wire x1="-48.26" y1="119.38" x2="-55.88" y2="119.38" width="0.1524" layer="91"/>
 <label x="-55.88" y="119.38" size="1.778" layer="95"/>
@@ -6530,16 +6530,6 @@ Connector</text>
 <junction x="-50.8" y="96.52"/>
 </segment>
 </net>
-<net name="A3" class="0">
-<segment>
-<wire x1="-60.96" y1="40.64" x2="-60.96" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="-60.96" y1="40.64" x2="-43.18" y2="40.64" width="0.1524" layer="91"/>
-<junction x="-60.96" y="40.64"/>
-<label x="-43.18" y="40.64" size="1.778" layer="95"/>
-<pinref part="R7" gate="G$1" pin="1"/>
-<pinref part="J5" gate="G$1" pin="1"/>
-</segment>
-</net>
 <net name="D4" class="0">
 <segment>
 <pinref part="J6" gate="G$1" pin="1"/>
@@ -6678,6 +6668,16 @@ Connector</text>
 <pinref part="J12" gate="J1" pin="1"/>
 <wire x1="104.14" y1="66.04" x2="104.14" y2="86.36" width="0.1524" layer="91"/>
 <label x="104.14" y="86.36" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A4" class="0">
+<segment>
+<wire x1="-60.96" y1="40.64" x2="-60.96" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="-60.96" y1="40.64" x2="-43.18" y2="40.64" width="0.1524" layer="91"/>
+<junction x="-60.96" y="40.64"/>
+<label x="-43.18" y="40.64" size="1.778" layer="95"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<pinref part="J5" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
