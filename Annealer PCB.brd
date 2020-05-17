@@ -193,7 +193,7 @@
 <text x="28.829" y="75.565" size="0.8128" layer="21">a GinaErick build</text>
 <text x="37.846" y="76.708" size="1.6764" layer="22" rot="MR0">Case Burner 5000</text>
 <text x="27.178" y="75.438" size="0.8128" layer="22" rot="MR0">a GinaErick build</text>
-<text x="41.91" y="21.59" size="1.016" layer="22" rot="MR0">anneal shield design by Dave Re
+<text x="41.91" y="21.59" size="1.016" layer="22" rot="MR0">annealer shield design by Dave Re
 dave@drperformanceshooting.com</text>
 <circle x="16.51" y="22.733" radius="1.016" width="0.1524" layer="20"/>
 <circle x="44.45" y="22.733" radius="1.016" width="0.1524" layer="20"/>
@@ -1484,6 +1484,19 @@ dave@drperformanceshooting.com</text>
 <text x="36.83" y="25.019" size="0.6096" layer="21" font="vector">3</text>
 <text x="32.385" y="25.019" size="0.6096" layer="21" font="vector">5</text>
 <text x="46.355" y="20.447" size="1.016" layer="21">I2C</text>
+<text x="20.574" y="45.974" size="1.778" layer="22" rot="MR0">+</text>
+<text x="20.574" y="28.194" size="1.778" layer="22" rot="MR0">+</text>
+<text x="48.641" y="59.944" size="1.778" layer="22" rot="MR0">+</text>
+<text x="48.641" y="48.514" size="1.778" layer="22" rot="MR0">+</text>
+<text x="54.229" y="34.417" size="1.778" layer="22" rot="MR0">+</text>
+<text x="54.229" y="25.527" size="1.778" layer="22" rot="MR0">+</text>
+<text x="52.705" y="14.986" size="1.778" layer="22" rot="MR0">+</text>
+<text x="54.991" y="15.621" size="1.778" layer="22" rot="MR0">+</text>
+<text x="48.768" y="6.731" size="1.778" layer="22" rot="MR0">+</text>
+<text x="40.386" y="6.477" size="1.778" layer="22" rot="MR0">+</text>
+<text x="26.924" y="6.731" size="1.778" layer="22" rot="MR0">+</text>
+<text x="12.954" y="6.604" size="1.778" layer="22" rot="MR0">+</text>
+<text x="39.116" y="44.196" size="0.8128" layer="22" rot="MR0">Version 3.0</text>
 </plain>
 <libraries>
 <library name="SparkFun-Connectors">
