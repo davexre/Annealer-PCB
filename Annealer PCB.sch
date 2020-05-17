@@ -5926,7 +5926,7 @@ Shield form compatible with the Arduino Uno R3.
 </instance>
 <instance part="B2" gate="G$1" x="-35.56" y="111.76" smashed="yes">
 <attribute name="NAME" x="-45.212" y="132.334" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="-44.45" y="86.106" size="1.778" layer="96" font="vector" align="top-left"/>
+<attribute name="VALUE" x="-72.39" y="139.446" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
 <instance part="J13" gate="J1" x="-45.72" y="-5.08" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-38.354" y="-10.16" size="1.778" layer="96" font="vector" rot="R90"/>
