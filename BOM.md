@@ -15,6 +15,7 @@ locations for each.
 - 7x 10k ohm axial lead resistor
 - 4x 330 ohm axial lead resistor
 - 1x mini pushbutton SPST switch
+- stackable headers or male headers
 
 ### Connectors
 
@@ -63,3 +64,13 @@ https://www.sparkfun.com/products/97
 Take your pick - these are the normal fare. The resistors are all normal axial lead, 1/4 watt resistors. I used 1%, but since
 you're trimming these, you can use 5% or even 10%, if you like. 
 
+### Headers
+
+Traditionally, you'd want stackable headers, so that you can also plug other devices into the top of your shield. SparkFun
+has a ready-made set here: https://www.sparkfun.com/products/10007
+
+However, if you want to rock straight male headers on the bottom, be my guest! https://www.sparkfun.com/products/116
+
+You can find the same on Mouser, including that same SparkFun kit: https://www.mouser.com/ProductDetail/SparkFun/PRT-11417?qs=WyAARYrbSnb%252BtXjDIp5vcQ%3D%3D
+
+The breakaway male headers come in many varieties. 
