@@ -26,6 +26,8 @@
  - I2C connector to add an LCD or other I2C based device
  - Reset button
  
+ You can find a [Bill of Materials](BOM.md) in this repository, too.
+ 
  ## IMPORTANT NOTE
  
  If you use the I2C connector, be aware that you cannot use Proximity sensor 2 or Thermistor 2 on some boards (like
