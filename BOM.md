@@ -48,10 +48,14 @@ And the corresponding connectors and pins:
 
 ### Trimpots
 
-Really, any trimpot 10k or higher will work, as long as it has .1" pitch with three inline pins. The Bourns 3296W is what the
-board was designed for. 
+Really, any trimpot 10k or higher will work, as long as it has .1" pitch with three inline pins. The Bourns 3296W is what 
+the board was designed for. 
 
 https://www.mouser.com/Passive-Components/Potentiometers-Trimmers-Rheostats/Trimmer-Resistors-Through-Hole/_/N-9q0yt?P=1yzekj2&Keyword=bourns+20k+trimpot+3296w&FS=True
+
+Alternately, you could choose to avoid the trimpot, and just solder in axial resistors between pins 1 & 2 on the board
+footprint. To get best results, you'd want precision resistors, which may or may not end up cheaper than the trimpot,
+depending on what you choose...
 
 ### Switch
 
