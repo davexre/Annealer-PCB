@@ -23,19 +23,19 @@
 <layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
 <layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
 <layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="16" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="61" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="61" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -47,9 +47,9 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
@@ -1497,6 +1497,20 @@ dave@drperformanceshooting.com</text>
 <text x="26.924" y="6.731" size="1.778" layer="22" rot="MR0">+</text>
 <text x="12.954" y="6.604" size="1.778" layer="22" rot="MR0">+</text>
 <text x="39.116" y="44.196" size="0.8128" layer="22" rot="MR0">Version 3.0</text>
+<text x="17.018" y="17.399" size="0.6096" layer="21">330</text>
+<text x="22.225" y="55.753" size="0.6096" layer="21">10k</text>
+<text x="50.165" y="44.069" size="0.6096" layer="21">10k</text>
+<text x="31.115" y="13.462" size="0.6096" layer="21">10k</text>
+<text x="17.145" y="13.589" size="0.6096" layer="21">10k</text>
+<text x="22.098" y="35.179" size="0.6096" layer="21">10k</text>
+<text x="50.165" y="55.499" size="0.6096" layer="21">10k</text>
+<text x="37.084" y="62.484" size="0.6096" layer="21" rot="R90">10k</text>
+<text x="49.657" y="68.199" size="0.6096" layer="21">330</text>
+<text x="39.751" y="68.199" size="0.6096" layer="21">330</text>
+<text x="31.115" y="17.399" size="0.6096" layer="21">330</text>
+<text x="33.655" y="28.829" size="0.6096" layer="21">20k</text>
+<text x="32.512" y="46.609" size="0.6096" layer="21">20k</text>
+<text x="41.275" y="46.609" size="0.6096" layer="21">20k</text>
 </plain>
 <libraries>
 <library name="SparkFun-Connectors">
