@@ -6,6 +6,9 @@
 - [Front of board design](images/AnnealerPCBv3-front.png)
 - [Back of board design](images/AnnealerPCBv3-back.png)
 
+Final boards will actually print with an inductor symbol on the front and back, too - OSH Park's rendering doesn't 
+show it correctly. Pictures of the actual boards will replace the images here when they arrive.
+
 ## Origins
  This design began from a simple DIY induction based cartridge case annealer created by a couple people on the
  [accurateshooter.com forum](http://forum.accurateshooter.com/threads/induction-brass-annealer-redux.3908353/). 
