@@ -1,6 +1,11 @@
 # Annealer PCB
  An Arduino shield for induction cartridge case annealers based on the GinaErick design. 
 
+## Pictures!
+
+- [Front of board design](images/AnnealerPCBv3-front.png)
+- [Back of board design](images/AnnealerPCBv3-back.png)
+
 ## Origins
  This design began from a simple DIY induction based cartridge case annealer created by a couple people on the
  [accurateshooter.com forum](http://forum.accurateshooter.com/threads/induction-brass-annealer-redux.3908353/). 
