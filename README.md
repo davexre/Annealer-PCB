@@ -60,7 +60,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  Input to pin A0.
  
  The voltage sensor circuit expects to be fed by a voltage divider - I'm using an Octopus Voltage Divider Brick,
- which is a 16:1 voltage divider. For a 48v power supply on the annealer, that means a maximum input voltage of 4v
+ which is a 16:1 voltage divider (see below). For a 48v power supply on the annealer, that means a maximum input voltage of 4v
  coming in to J1 on the board. The design then incoporates a second voltage divider using a 10k resistor and a 20k
  trimpot, so you can adjust the input voltage precisely to match the ADC (so, exactly 50% for the Artemis). 
  
@@ -75,6 +75,13 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  
  To tune the voltage divider after assembly, attach 5v to pin 1 at connector J1. Measure the voltage between A0 and GND.
  Tune trimpot VR1 until you measure 2.5v, indicating that the voltage divider network is dividing voltage by 2 exactly. 
+ 
+ *Note:* it seems like the Octopus Voltage Divider Brick is no longer made by ElecFreaks. So, 
+ I [ginned up another PCB design](https://github.com/davexre/Voltage-Divider-Brick) that implements something very
+ similar to the Octopus brick. You can substitute whatever resistors you need to get the output voltage within the scale
+ that your board can support. You could potentially just use the voltage divider already on the Annealer board to replace
+ it, but personally, I prefer to keep potentially damaging voltages (pun intended) away from my main board. The brick 
+ adds a small layer of protection, in this case.
  
  ### Current
  Input to pin A1.
