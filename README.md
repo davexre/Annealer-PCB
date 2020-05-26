@@ -103,6 +103,22 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  setting links pin 3 on J2 to A1 directly, or you can simply use the voltage divider network to configure the correct input
  voltage for your sensor. 
  
+ ### SRC voltage divider
+ 
+ The SRC voltage divider network feeds the thermistor and proximity sensors an appropriate logic level voltage for the board
+ in use. To get accurate readings, and avoid damage to your board, you need to supply these devices with your reference
+ voltage. That's easy if you have a 3.3v or 5v board. If you have an Artemis based board, though, you need to supply a
+ 2v reference for accurate readings. So, we do that with a voltage divider on the board. By default, the board divides 3.3v down to 2v for the source voltage.
+ To set this up, feed 3.3v into the 3.3v pin on the shield. Then probe the middle pad of the SRC_VOLT jumper and GND.
+ Adjust VR3 until you reach 2v.
+ 
+ To configure for 3.3v reference, cut the SRC_DIV jumper and solder the other side. This connects the 3.3v supply straight
+ both thermistor voltage dividers. 
+ 
+ To configure for 5v, cut both the SRV_VOLT and SRC_DIV jumpers and resolder the opposite sides. This connects the 5v
+ supply straight to both thermistor voltage dividers and both proximity devices.
+ 
+ 
  ### Thermistors
  Input to pins A2 and A4, respectively. _**SEE NOTE ABOVE ABOUT I2C**_
  
@@ -111,26 +127,15 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  to a table, or using a Steinhart style equation to arrive at the actual temperature. One example of [this kind of thermistor](https://www.adafruit.com/product/372_)
  is sold by Adafruit. 
  
- In order to get an accurate reading, you need to power the thermistor's voltage divider with your reference voltage.
- That's easy, if you have a 3.3v or 5v ADC reference. If you have an Artemis, though, you need to supply the thermistors
- with 2v. So, we do that with another voltage divider. By default, the board divides 3.3v down to 2v for the source voltage.
- To set this up, feed 3.3v into the 3.3v pin on the shield. Then probe the middle pad of the THERM_DIV jumper and GND.
- Adjust VR3 until you reach 2v.
- 
- To configure for 3.3v reference, cut the THERM_DIV jumper and solder the other side. This connects the 3.3v supply straight
- both thermistor voltage dividers. 
- 
- To configure for 5v, cut both the THERM_SRC and THERM_DIV jumpers and resolder the opposite sides. This connects the 5v
- supply straight to both thermistor voltage dividers. 
- 
+ See "SRV voltage divider" above to determine how to send the correct source voltage to the thermistors.
  
  ### Proximity Sensors
  Input to pins A3 and A5, respectively. _**SEE NOTE ABOVE ABOUT I2C**_
  
  J3 and J10 are both 4 pin jumpers that are intended to feed either IR proximity sensors (which are an IR LED and
- photodetector in a single package) or IR LED/detector pairs. Pins 1 & 2 act as a pair for the detector. These are generally
+ phototransistor in a single package) or IR LED/detector pairs. Pins 1 & 2 act as a pair for the detector. These are generally
  measured across a voltage divider, so a 10k resistor is specified for that purpose. If your detector requires a different
- resistor value, substitute as required.
+ resistor value, substitute as required. See "SRV voltage divider" above for accurate source voltage. 
  
  Pins 3 & 4 are intended to power the LED. They supply 5v to the LED and incorporate a 330 ohm current limiting resistor.
  Again, if your device requires something different, substitute those resistors as required.
