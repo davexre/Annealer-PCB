@@ -57,7 +57,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  use to alter several circuit paths appropriately. SparkFun has a [tutorial on using jumper pads](https://learn.sparkfun.com/tutorials/how-to-work-with-jumper-pads-and-pcb-traces) on their site.
  
  ### Pin Map
- '''
+ ```
  #ifdef _V3_BOARD
   #define  VOLTAGE_PIN     A0
   #define  CURRENT_PIN     A1
@@ -77,7 +77,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
   #define  ENCODER_B_PIN   11
   #define  ENCODER_BUTTON  12
 #endif
-'''
+```
 
 
  ### Voltage
