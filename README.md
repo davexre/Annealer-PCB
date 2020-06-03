@@ -56,6 +56,30 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  board for other reference voltages. There are four solderable open/closed jumper pads that you can
  use to alter several circuit paths appropriately. SparkFun has a [tutorial on using jumper pads](https://learn.sparkfun.com/tutorials/how-to-work-with-jumper-pads-and-pcb-traces) on their site.
  
+ ### Pin Map
+ '''
+ #ifdef _V3_BOARD
+  #define  VOLTAGE_PIN     A0
+  #define  CURRENT_PIN     A1
+  #define  THERM1_PIN      A2
+  #define  OPTO1_PIN       A3
+  #define  THERM2_PIN      A4
+  #define  OPTO2_PIN       A5
+  #define  AUX1_PIN        2
+  #define  AUX2_PIN        3
+  #define  INDUCTOR_PIN    4
+  #define  SOLENOID_PIN    5
+  #define  START_PIN       6   
+  #define  STOP_PIN        7   
+  #define  INDUCTOR_LED    8
+  #define  SOLENOID_LED    9
+  #define  ENCODER_A_PIN   10
+  #define  ENCODER_B_PIN   11
+  #define  ENCODER_BUTTON  12
+#endif
+'''
+
+
  ### Voltage
  Input to pin A0.
  
