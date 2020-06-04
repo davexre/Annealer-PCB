@@ -159,7 +159,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  J3 and J10 are both 4 pin jumpers that are intended to feed either IR proximity sensors (which are an IR LED and
  phototransistor in a single package) or IR LED/detector pairs. Pins 1 & 2 act as a pair for the detector. These are generally
  measured across a voltage divider, so a 10k resistor is specified for that purpose. If your detector requires a different
- resistor value, substitute as required. See "SRV voltage divider" above for accurate source voltage. 
+ resistor value, substitute as required. See "SRC voltage divider" above for accurate source voltage. 
  
  Pins 3 & 4 are intended to power the LED. They supply 5v to the LED and incorporate a 330 ohm current limiting resistor.
  Again, if your device requires something different, substitute those resistors as required.
