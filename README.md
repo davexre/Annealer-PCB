@@ -56,6 +56,30 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  board for other reference voltages. There are four solderable open/closed jumper pads that you can
  use to alter several circuit paths appropriately. SparkFun has a [tutorial on using jumper pads](https://learn.sparkfun.com/tutorials/how-to-work-with-jumper-pads-and-pcb-traces) on their site.
  
+ ### Pin Map
+ ```
+ #ifdef _V3_BOARD
+  #define  VOLTAGE_PIN     A0
+  #define  CURRENT_PIN     A1
+  #define  THERM1_PIN      A2
+  #define  OPTO1_PIN       A3
+  #define  THERM2_PIN      A4
+  #define  OPTO2_PIN       A5
+  #define  AUX1_PIN        2
+  #define  AUX2_PIN        3
+  #define  INDUCTOR_PIN    4
+  #define  SOLENOID_PIN    5
+  #define  START_PIN       6   
+  #define  STOP_PIN        7   
+  #define  INDUCTOR_LED    8
+  #define  SOLENOID_LED    9
+  #define  ENCODER_A_PIN   10
+  #define  ENCODER_B_PIN   11
+  #define  ENCODER_BUTTON  12
+#endif
+```
+
+
  ### Voltage
  Input to pin A0.
  
@@ -135,7 +159,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  J3 and J10 are both 4 pin jumpers that are intended to feed either IR proximity sensors (which are an IR LED and
  phototransistor in a single package) or IR LED/detector pairs. Pins 1 & 2 act as a pair for the detector. These are generally
  measured across a voltage divider, so a 10k resistor is specified for that purpose. If your detector requires a different
- resistor value, substitute as required. See "SRV voltage divider" above for accurate source voltage. 
+ resistor value, substitute as required. See "SRC voltage divider" above for accurate source voltage. 
  
  Pins 3 & 4 are intended to power the LED. They supply 5v to the LED and incorporate a 330 ohm current limiting resistor.
  Again, if your device requires something different, substitute those resistors as required.
