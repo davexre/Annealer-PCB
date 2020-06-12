@@ -38,12 +38,14 @@ A number of examples are available from Mouser and other places, too. For instan
 - https://www.mouser.com/ProductDetail/molex/22-23-2021/?qs=ILqg114nvd4YKlRlbo3yMg%3D%3D&countrycode=US&currencycode=USD
 - https://www.mouser.com/ProductDetail/molex/22-11-2036/?qs=SdQWveS8jHNIXMa9OcvBPw%3D%3D&countrycode=US&currencycode=USD
 - https://www.mouser.com/ProductDetail/molex/22-23-2042/?qs=52ipEG6BoUGnVIQV2y3Jgg%3D%3D&countrycode=US&currencycode=USD
+- https://www.mouser.com/ProductDetail/Molex/22-23-2051?qs=ILqg114nvd59B%2FNFe4wunQ%3D%3D
 
 And the corresponding connectors and pins:
 
 - https://www.mouser.com/ProductDetail/molex/10-11-2023/?qs=T%2FNdvNikOF379zD2RopdYA%3D%3D&countrycode=US&currencycode=USD
 - https://www.mouser.com/ProductDetail/molex/10-11-2033/?qs=bhsdBC0mzWCpS6OmMejH%252bg%3D%3D&countrycode=US&currencycode=USD
 - https://www.mouser.com/ProductDetail/molex/10-11-2043/?qs=WHdfnlF6O9swyDlL62cnjQ%3D%3D&countrycode=US&currencycode=USD
+https://www.mouser.com/ProductDetail/molex/10-11-2053/?qs=WHdfnlF6O9swyDlL62cnjQ%3D%3D&countrycode=US&currencycode=USD
 - https://www.mouser.com/ProductDetail/molex/50-29-1900-cut-strip/?qs=SMSg0crzni%252bi9hjs4v%252bjvg%3D%3D&countrycode=US&currencycode=USD
 
 ### Trimpots
