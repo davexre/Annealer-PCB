@@ -25,7 +25,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
    - Two thermistors
    - Voltage
    - Current
-   - Two Photo detector or IR transmitter/receiver pairs
+   - Two [break beam sensors](https://www.adafruit.com/product/2167)
  - Two buttons (typically, Start and Stop) via a 4-pin header
  - Two relays (typically, for Induction board and solenoid control)
  - Two auxiliary headers (signal pin and ground, could be used for a variety of control purposes)
@@ -58,19 +58,19 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  
  ### Pin Map
  ```
- #ifdef _V3_BOARD
+#ifdef _V4_BOARD
   #define  VOLTAGE_PIN     A0
   #define  CURRENT_PIN     A1
   #define  THERM1_PIN      A2
   #define  OPTO1_PIN       A3
   #define  THERM2_PIN      A4
   #define  OPTO2_PIN       A5
-  #define  AUX1_PIN        2
-  #define  AUX2_PIN        3
+  #define  START_PIN       2   
+  #define  STOP_PIN        3
   #define  INDUCTOR_PIN    4
   #define  SOLENOID_PIN    5
-  #define  START_PIN       6   
-  #define  STOP_PIN        7   
+  #define  AUX1_PIN        6
+  #define  AUX2_PIN        7   
   #define  INDUCTOR_LED    8
   #define  SOLENOID_LED    9
   #define  ENCODER_A_PIN   10
@@ -127,11 +127,14 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  setting links pin 3 on J2 to A1 directly, or you can simply use the voltage divider network to configure the correct input
  voltage for your sensor. 
  
- ### SRC voltage divider
+ ### REF-VOLT jumper
  
- The SRC voltage divider network feeds the thermistor and proximity sensors an appropriate logic level voltage for the board
+ The REF-VOLT jumper feeds the thermistor and proximity sensors an appropriate logic level voltage for the board
  in use. To get accurate readings, and avoid damage to your board, you need to supply these devices with your reference
- voltage. That's easy if you have a 3.3v or 5v board. If you have an Artemis based board, though, you need to supply a
+ voltage. 
+ 
+ The default setting is 3.3v - you can easily cut the jumper and solder to the 5.5v side, as well.
+ That's easy if you have a 3.3v or 5v board. If you have an Artemis based board, though, you need to supply a
  2v reference for accurate readings. So, we do that with a voltage divider on the board. By default, the board divides 3.3v down to 2v for the source voltage.
  To set this up, feed 3.3v into the 3.3v pin on the shield. Then probe the middle pad of the SRC_VOLT jumper and GND.
  Adjust VR3 until you reach 2v.
@@ -151,21 +154,28 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  to a table, or using a Steinhart style equation to arrive at the actual temperature. One example of [this kind of thermistor](https://www.adafruit.com/product/372_)
  is sold by Adafruit. 
  
- See "SRV voltage divider" above to determine how to send the correct source voltage to the thermistors.
+ There's also a voltage divider feeding the thermistors to ensure they get the correct logic level voltage. That's easy if
+ you have a 3.3v or 5v board. If you have an Artemis based board, though, you need to supply a  2v reference for accurate
+ readings. So, we do that with a voltage divider on the board. By default, the board divides 3.3v (from the REF-VOLT jumper)
+ down to 2v for the source voltage.
+ 
+ To set this up, feed 3.3v into the 3.3v pin on the shield. Then probe the middle pad of the REF-VOLT jumper and GND.
+ Adjust VR3 until you reach 2v.
+ 
+ See "REF-VOLT jumper" above to determine how to send the correct source voltage to the thermistors. If you need to bypass 
+ the voltage divider (to send 3.3v or 5v directly to the thermistors), cut the THERM-DIV jumper and solder to the other
+ side. 
+ 
  
  ### Proximity Sensors
  Input to pins A3 and A5, respectively. _**SEE NOTE ABOVE ABOUT I2C**_
  
- J3 and J10 are both 4 pin jumpers that are intended to feed either IR proximity sensors (which are an IR LED and
- phototransistor in a single package) or IR LED/detector pairs. Pins 1 & 2 act as a pair for the detector. These are generally
- measured across a voltage divider, so a 10k resistor is specified for that purpose. If your detector requires a different
- resistor value, substitute as required. See "SRC voltage divider" above for accurate source voltage. 
+ J3 and J10 are both 5 pin jumpers that are intended to drive the [Adafruit IR Break Beam sensors](https://www.adafruit.com/product/2167). 
  
- Pins 3 & 4 are intended to power the LED. They supply 5v to the LED and incorporate a 330 ohm current limiting resistor.
- Again, if your device requires something different, substitute those resistors as required.
+ Pin 1 connects to a digital pin, so you'll need to use A3 and A5 with digitalRead. You need to set INPUT_PULLUP on 
+ those pins, as well. Pin 2 should be your reference voltage (3.3v or 5v) and is set by the REF-VOLT jumper (see above). 
+ Pin 4 is 5v for the IR transmitter. Pins 3 and 5 are ground.
  
- If you need access to analog pins without a voltage divider in place, you could also leave out R3 or R10, and pin 1 will
- connect directly to A4 or A5. 
  
  ### Start/Stop buttons, relays, AUX, and Multipurpose connectors
  
