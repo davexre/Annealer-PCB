@@ -177,7 +177,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  Pin 4 is 5v for the IR transmitter. Pins 3 and 5 are ground.
  
  
- ### Start/Stop buttons, relays, AUX, and Multipurpose connectors
+ ### Start/Stop buttons, relays, AUX, and Encoder connectors
  
  Each of these connectors provides direct access to one or more digital pins. You can use these for input or output as
  required. The example implementation uses the start/stop buttons, and the relays, currently. 
@@ -191,7 +191,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  J9 - D2, J11 - D3. The example uses J6 and J7 to operate the inductor board SSR, and the trapdoor solenoid SSR, 
  respectively.
  
- The Multipurpose connector provides access to 3 additional digital pins (D10 on pin 1, D11 on pin 2, D12 on pin3), with
+ The Encoder connector provides access to 3 additional digital pins (D10 on pin 1, D11 on pin 2, D12 on pin3), with
  the fourth pin connecting to GND. This could be used for any purpose required, but one common purpose might be to interface
  with an encoder knob and click switch. 
  
