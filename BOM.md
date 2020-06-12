@@ -10,10 +10,11 @@ locations for each.
 - Molex Polarized Connectors
   - 7x 1x2
   - 1x 1x3
-  - 4x 1x4
+  - 3x 1x4
+  - 2x 1x5
 - 3x Bourns 3296W-1-203ALF trimpots
-- 7x 10k ohm axial lead resistor
-- 4x 330 ohm axial lead resistor
+- 5x 10k ohm axial lead resistor
+- 2x 330 ohm axial lead resistor
 - 1x mini pushbutton SPST switch
 - stackable headers or male headers
 
