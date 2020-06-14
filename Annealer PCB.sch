@@ -5887,6 +5887,9 @@ Shield form compatible with the Arduino Uno R3.
 <part name="J3" library="dave-connectors" deviceset="CONN_5X1_MOLEX_POLAR" device=""/>
 <part name="J10" library="dave-connectors" deviceset="CONN_5X1_MOLEX_POLAR" device=""/>
 <part name="GND6" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="J14" library="SparkFun-Connectors" deviceset="CONN_02" device="POLAR"/>
+<part name="R3" library="SparkFun-Resistors" deviceset="330OHM" device="-HORIZ-1/10W-5%" value="330"/>
+<part name="GND16" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5896,6 +5899,7 @@ Shield form compatible with the Arduino Uno R3.
 <text x="129.54" y="-2.54" size="1.778" layer="91">Proximity Sensor 1</text>
 <text x="180.34" y="0" size="1.778" layer="91">Proximity Sensor 2</text>
 <text x="-53.34" y="-15.24" size="1.778" layer="91">I2C</text>
+<text x="129.54" y="66.04" size="1.778" layer="91">Power LED</text>
 </plain>
 <instances>
 <instance part="GND1" gate="1" x="-60.96" y="83.82" smashed="yes">
@@ -5975,6 +5979,17 @@ Shield form compatible with the Arduino Uno R3.
 <instance part="GND6" gate="1" x="154.94" y="48.26" smashed="yes" rot="R90">
 <attribute name="VALUE" x="155.194" y="48.26" size="1.778" layer="96" rot="R270" align="top-center"/>
 </instance>
+<instance part="J14" gate="G$1" x="137.16" y="73.66" smashed="yes" rot="R90">
+<attribute name="VALUE" x="141.986" y="71.12" size="1.778" layer="96" font="vector" rot="R90"/>
+<attribute name="NAME" x="131.572" y="71.12" size="1.778" layer="95" font="vector" rot="R90"/>
+</instance>
+<instance part="R3" gate="G$1" x="137.16" y="99.06" smashed="yes" rot="R90">
+<attribute name="NAME" x="135.636" y="99.06" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="138.684" y="99.06" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
+</instance>
+<instance part="GND16" gate="1" x="127" y="88.9" smashed="yes" rot="R270">
+<attribute name="VALUE" x="126.746" y="88.9" size="1.778" layer="96" rot="R90" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -6047,6 +6062,12 @@ Shield form compatible with the Arduino Uno R3.
 <wire x1="190.5" y1="38.1" x2="200.66" y2="38.1" width="0.1524" layer="91"/>
 <junction x="200.66" y="38.1"/>
 </segment>
+<segment>
+<pinref part="J14" gate="G$1" pin="2"/>
+<wire x1="134.62" y1="81.28" x2="134.62" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="GND16" gate="1" pin="GND"/>
+<wire x1="134.62" y1="88.9" x2="129.54" y2="88.9" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
@@ -6087,6 +6108,11 @@ Shield form compatible with the Arduino Uno R3.
 <pinref part="J10" gate="G$1" pin="4"/>
 <wire x1="195.58" y1="27.94" x2="195.58" y2="43.18" width="0.1524" layer="91"/>
 <label x="195.58" y="43.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="137.16" y1="104.14" x2="137.16" y2="111.76" width="0.1524" layer="91"/>
+<label x="137.16" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -6335,6 +6361,13 @@ Shield form compatible with the Arduino Uno R3.
 <wire x1="185.42" y1="27.94" x2="185.42" y2="40.64" width="0.1524" layer="91"/>
 <label x="185.42" y="40.64" size="1.778" layer="95"/>
 <pinref part="J10" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="J14" gate="G$1" pin="1"/>
+<wire x1="137.16" y1="93.98" x2="137.16" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
