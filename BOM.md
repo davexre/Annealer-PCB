@@ -8,13 +8,13 @@ locations for each.
 
 - 2x 5mm LEDs
 - Molex Polarized Connectors
-  - 7x 1x2
+  - 8x 1x2
   - 1x 1x3
   - 3x 1x4
   - 2x 1x5
 - 3x Bourns 3296W-1-203ALF trimpots
 - 5x 10k ohm axial lead resistor
-- 2x 330 ohm axial lead resistor
+- 3x 330 ohm axial lead resistor
 - 1x mini pushbutton SPST switch
 - stackable headers or male headers
 
