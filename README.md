@@ -32,6 +32,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  - Multipurpose header (3 signals and ground, can hook up an encoder with button, or any other use)
  - Two LEDs for troubleshooting and confirmation of code
  - I2C connector to add an LCD or other I2C based device
+ - Power On LED connector for front panel
  - Reset button
  
  You can find a [Bill of Materials](BOM.md) in this repository, too.
