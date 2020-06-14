@@ -1507,6 +1507,8 @@ dave@drperformanceshooting.com</text>
 <text x="33.655" y="32.639" size="0.6096" layer="21">20k</text>
 <text x="32.512" y="46.609" size="0.6096" layer="21">20k</text>
 <text x="50.165" y="26.289" size="0.6096" layer="21">20k</text>
+<text x="19.304" y="64.389" size="1.016" layer="21">Power LED</text>
+<text x="26.67" y="67.945" size="0.6096" layer="21" rot="R90">330</text>
 </plain>
 <libraries>
 <library name="SparkFun-Connectors">
