@@ -122,7 +122,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  For other boards, the voltage divider can be tuned to pull the max input value down to match the ADC reference voltage.
  Divide your reference voltage by 4.5 to get the scale factor, and then multiply by 5 to get a target voltage. For instance, 
  for the Artemis, 2/4.5 = .444. Multiply by 5v to get a target of 2.222 volts. For 3.3V reference, your target is 3.667.
- Attach 5v to pin 1 on J2, and then measure voltage between A1 and GND. Tune trimpot VR2 until you reach the target voltage. 
+ Attach 5v to pin 3 on J2, and then measure voltage between A1 and GND. Tune trimpot VR2 until you reach the target voltage. 
  
  For using sensors other than the Gravity sensor block lined above, you can use this circuit as needed. Changing the jumper
  setting links pin 3 on J2 to A1 directly, or you can simply use the voltage divider network to configure the correct input
