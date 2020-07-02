@@ -135,16 +135,9 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  voltage. 
  
  The default setting is 3.3v - you can easily cut the jumper and solder to the 5.5v side, as well.
- That's easy if you have a 3.3v or 5v board. If you have an Artemis based board, though, you need to supply a
- 2v reference for accurate readings. So, we do that with a voltage divider on the board. By default, the board divides 3.3v down to 2v for the source voltage.
- To set this up, feed 3.3v into the 3.3v pin on the shield. Then probe the middle pad of the SRC_VOLT jumper and GND.
- Adjust VR3 until you reach 2v.
  
- To configure for 3.3v reference, cut the SRC_DIV jumper and solder the other side. This connects the 3.3v supply straight
- both thermistor voltage dividers. 
- 
- To configure for 5v, cut both the SRV_VOLT and SRC_DIV jumpers and resolder the opposite sides. This connects the 5v
- supply straight to both thermistor voltage dividers and both proximity devices.
+ To configure for 5v, cut both the REF_VOLT jumper and resolder the opposite side. This connects the 5v
+ supply to the thermistor voltage divider.
  
  
  ### Thermistors
@@ -160,7 +153,7 @@ show it correctly. Pictures of the actual boards will replace the images here wh
  readings. So, we do that with a voltage divider on the board. By default, the board divides 3.3v (from the REF-VOLT jumper)
  down to 2v for the source voltage.
  
- To set this up, feed 3.3v into the 3.3v pin on the shield. Then probe the middle pad of the REF-VOLT jumper and GND.
+ To set this up, feed 3.3v into the 3.3v pin on the shield. Then probe the middle pad of the THERM_DIV jumper and GND.
  Adjust VR3 until you reach 2v.
  
  See "REF-VOLT jumper" above to determine how to send the correct source voltage to the thermistors. If you need to bypass 
